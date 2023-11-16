@@ -75,12 +75,25 @@
             bottom: 0;
             width: 100%;
         }
+        #btn {
+         display: inline-block;
+         padding: 10px 20px;
+         text-decoration: none;
+         background-color: #4caf50;
+         text-align: center;
+         font-size: bold ;
+         color: rgb(0, 0, 0);
+         border-radius: 5px;
+         border: none;
+        transition: background-color 0.3s ease;
+        }
+        
     </style>
 </head>
 <body>
     <header>
         <h1>Cost-Control</h1>
-        <a href="pp.html">jj</a>
+        
     </header>
 
     <main>
@@ -92,11 +105,10 @@
             <input type="email" id="email" name="email" required>
             <label for="contrasena">Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required>
-            <a href="pp.html" type="button">Iniciar Sesion</a>
-        </form>
+            <a id="btn" href="pp.html" type="button">Iniciar Sesion</a>
+        </form><br>
         <a href="olvidemicontraseña.html">¿Olvidaste tu contraseña?</a>
     </main>
-
     <footer>
         © 2023 Cost-Control
     </footer>
