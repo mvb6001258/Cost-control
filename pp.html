@@ -70,6 +70,83 @@
                 background-position: 100% 100%;
             }
         }
+        :root {
+    --notification-background: #313e2c;
+    --notification-primary: #aaec8a;
+    --background: #FAF9FF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+}
+
+.notification {
+    position: absolute;
+    width: max-content;
+    left: 0; 
+    right: 0; 
+    bottom: 100px;
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 6px;
+    background-color: var(
+        --notification-background);
+    color: var(--notification-primary);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 3s linear;
+}
+
+.notification__body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 8px;
+}
+
+.notification__progress {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: calc(100% - 8px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(
+        to right, 
+        var(--notification-background),  
+        var(--notification-primary)
+    );
+    border-radius: inherit;
+    animation: progress 2.5s 0.3s linear;
+}
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}
     </style>
 </head>
 <body>
@@ -77,12 +154,17 @@
         <h1>Cost-Control</h1>
     </header>
     <main>
-        <img src="app_screenshot_1.png" alt="Ten tus ahorros controlados">
+        <img src="https://i.pinimg.com/736x/4e/4c/db/4e4cdbe05f3158c07c49c03572412f10.jpg" alt="Ten tus ahorros controlados">
         <p>Descubre la mejor aplicación para <strong>controlar tu dinero</strong>. ¡No te lo pierdas!</p>
-        <img src="app_screenshot_2.png" alt="Otra captura de pantalla de la App">
+        <img src="https://i.pinimg.com/736x/d4/4d/06/d44d060d72bcf5652602c21a0fe83872.jpg" alt="Otra captura de pantalla de la App">
         <p>Descarga la app ahora y disfruta de todas las características y beneficios que ofrecemos.</p>
-        <a href="enlace_de_descarga">Descargar App</a>
+        <a href="app.xaml">Descargar App</a>
     </main>
+    <div class="notification">
+        <div class="notification__body">
+            Cuenta Creada con Exito &#128640; 
+        </div>
+        <div class="notification__progress"></div>
+    </div>
 </body>
 </html>
-
